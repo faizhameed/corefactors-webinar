@@ -968,6 +968,9 @@ img.testi-logo{
   text-align: center;
   padding: 10px;
 }
+img.webinar-logo{
+  width: 50%;
+}
 .form-section-1{
     background: #0093dd;
     color: #fff;
@@ -987,7 +990,17 @@ img.testi-logo{
     margin: 5px;
     text-align: left;
 }
-a.form-section-2-btn{
+.form-section-3{
+    background: #0093dd;
+    color: #fff;
+    display: block;
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px;
+    text-align: center;
+}
+button.form-section-3-btn{
     color: #16325C;
     text-decoration: none;
     border: 2px solid #ffd246;
@@ -995,6 +1008,16 @@ a.form-section-2-btn{
     border-radius: 5px;
     padding: 6px;
     font-weight: bold;
+    font-size: 26px;
+    width: 281px;
+    height: 59px;
+    margin-bottom: 20px;
+}
+p.form-section-3-para{
+  text-align: center;
+}
+h2.header-1-h2{
+  font-weight:bold;
 }
 input.webinar-form-input{
   border:2px solid #fff;
@@ -1010,21 +1033,66 @@ select.webinar-form-input{
   height: 35px;
   margin-bottom: 40px;
 }
+ol.learnings{
+  padding:20px;
+  margin: 0;
+}
 .about-1{
   padding:20px;
+}
+h2.about-1-h2{
+  text-align: center;
+  font-weight: bold;
+}
+h2.about-2-h2{
+  text-align: center;
+  font-weight:bold;
+}
+h2.ag-h2{
+  text-align: center;
+  font-weight:bold;
+}
+h3.form-section-h3{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 .about-2{
   padding: 0px 20px 20px;
 }
 .about-guest{
-  padding: 20px;
+  padding: 0 20px;
+}
+.guest{
+  display: flex;
+  align-items: center;
+}
+p.guest-name{
+  margin-left: 20px;
 }
 img.guest-img{
   width: 35%;
-  border-radius: 60px;
+  border-radius:60px;
+  margin-bottom: 5px;
+}
+img.chief-speaker-img{
+  width: 80%;
+  border-radius:50px;
 }
 .chief-speaker{
   padding: 0px 20px;
+}
+.cs-flex{
+  display: flex;
+}
+p.cs-para{
+  font-size:12px;
+}
+p.header-1-para{
+  font-size: 18px;
+}
+p.cs-designation{
+  font-size: 12px;
 }
 h3.cs-h3{
   font-size: 18px;

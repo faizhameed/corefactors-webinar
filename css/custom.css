@@ -989,7 +989,7 @@ img.webinar-logo{
     border-radius: 5px;
     padding:20px;
     margin: 5px;
-    text-align: left;
+    text-align:center;
 }
 .form-section-3{
     background: #0093dd;
@@ -1065,6 +1065,7 @@ p.form-section-1-para{
 }
 p.form-section-2-para{
   font-size: 16px;
+  text-align: left;
 }
 .about-2{
   padding: 0px 20px 20px;
@@ -1146,11 +1147,11 @@ p.header-1-para {
     width: 400px;
 }
 .form-section-2{
-    height:300px;
+    height:365px;
     width: 400px;
 }
 .form-section-3{
-    height:190px;
+    height:100px;
     width: 400px;
 }
 h3.cs-h3 {

@@ -970,6 +970,7 @@ img.testi-logo{
 }
 img.webinar-logo{
   width: 50%;
+  cursor: default;
 }
 .form-section-1{
     background: #0093dd;
@@ -1015,6 +1016,7 @@ button.form-section-3-btn{
 }
 p.form-section-3-para{
   text-align: center;
+  font-size: 16px;
 }
 h2.header-1-h2{
   font-weight:bold;
@@ -1052,10 +1054,16 @@ h2.ag-h2{
   text-align: center;
   font-weight:bold;
 }
-h3.form-section-h3{
+h3.form-section-1-h3{
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
+}
+p.form-section-1-para{
+  font-size: 16px;
+}
+p.form-section-2-para{
+  font-size: 16px;
 }
 .about-2{
   padding: 0px 20px 20px;
@@ -1119,6 +1127,9 @@ h2.header-1-h2 {
   font-weight: bold;
   font-size: 35px;
 }
+h3.form-section-1-h3 {
+  font-size: 26px;
+}
 p.header-1-para {
   font-size: 24px;
 }
@@ -1167,6 +1178,9 @@ p.cs-designation {
 .flex-1{
   order:2;
 }
+.flex-2{
+  width: 65%;
+}
 img.guest-img {
   width: 12%;
 }
@@ -1196,6 +1210,17 @@ p.guest-para{
   font-size: 16px;
 }
 
+}
+@media only screen and (min-width:769px) and (max-width:850px){
+  .about-1{
+    padding: 0;
+  }
+  .about-2{
+    padding: 0;
+  }
+  .about-guest{
+    padding: 0;
+  }
 }
 
 

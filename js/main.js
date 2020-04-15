@@ -182,6 +182,117 @@ $(document).ready(function() {
   });
 });
 
+$("#trial_form_submit_webinar").click(function() {
+  $(this).attr("disabled", true);
+  $("#form_success")
+    .attr("style", "display:none")
+    .html("");
+  var to_list = [
+    { email_id: "marketing@corefactors.in", name: "Corefactors Marketing" },
+    { email_id: "nagarjunan.d@corefactors.in", name: "Naga" }
+  ];
+  var accname = $("#firstname").val();
+  var accemail = $("#email").val();
+  var acclastname = $("#lastname").val();
+  if (accname == "") {
+    $("#firstname")
+      .focus()
+      .attr("style", "border-color:red");
+    $(this).attr("disabled", false);
+     return false;
+  } else {
+    
+    $("#firstname").attr("style", "");
+  }
+  if (accemail == "") {
+  
+    $("#email")
+      .focus()
+      .attr("style", "border-color:red");
+    $(this).attr("disabled", false);
+  
+    return false;
+  } else {
+    if (!isEmail(accemail)) {
+  
+      $("#email")
+        .focus()
+        .attr("style", "border-color:red");
+      $(this).attr("disabled", false);
+ 
+      return false;
+    } else {
+      $("#email").attr("style", "");
+    }
+  }
+  
+  htmlcontent =
+    '<html><head><title></title></head><body><p style="text-align: center;"><img alt="" src="//teleduce.in/media/sendy_email_template/logo-blue_1.png" style="width: 250px; height: 58px;" /></p><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;">';
+  htmlcontent +=
+    '<p><span style="font-size:16px;"><kbd><samp><span style="font-family:times new roman;"><strong>Name &nbsp; &nbsp; :</strong>&nbsp;' +
+    accname +
+    '</span></samp></kbd></span></p><p><span style="font-size:16px;"><kbd><samp><span style="font-family:times new roman;">';
+  htmlcontent +=
+    '<strong>Mobile &nbsp; :</strong> </span></samp></kbd></span><span style="font-family: &quot;times new roman&quot;; font-size: 16px; background-color: rgb(238, 238, 238);">' +
+    accmobile.toString() +
+    '</span></p><p><span style="font-size:16px;"><kbd><samp>';
+  htmlcontent +=
+    '<span style="font-family:times new roman;"><strong>Email &nbsp; &nbsp; :&nbsp;</strong></span></samp></kbd></span><span style="font-family: &quot;times new roman&quot;; font-size: 16px; background-color: rgb(238, 238, 238);">' +
+    accemail +
+    "</span></p><p>";
+  htmlcontent +=
+    '<span style="font-size:16px;"><kbd><samp><font face="times new roman"><b>Company :&nbsp;</b></font></samp></kbd></span><span style="font-family: &quot;times new roman&quot;; font-size: 16px; background-color: rgb(238, 238, 238);">' +
+    acccompany +
+    "</span></p>";
+  htmlcontent +=
+    '</div><p style="text-align: center;">&nbsp;<span class="il" style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 12.8px; text-align: -webkit-center; background-color: rgb(255, 255, 255);">Copyright</span>';
+  htmlcontent +=
+    '<span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 12.8px; text-align: -webkit-center; background-color: rgb(255, 255, 255);">&nbsp;&copy;2016&nbsp;<a href="http://www.corefactors.in">http://www.corefactors.in</a></span></p></body></html>';
+  var email_message = {
+    html_content: htmlcontent,
+    subject: "New Contact from Corefactors",
+    from_mail: "support@corefactors.in",
+    from_name: "Corefactors Support",
+    reply_to: "support@corefactors.in",
+    to_recipients: to_list
+  };
+  var payload = { message: email_message };
+  var single_content = { mail_datas: payload };
+
+  var emailurl =
+    "https://teleduce.in/send-email-json-otom/b946312a-89c1-4fe9-a7b3-0db1b7ade389/1004/";
+  $.post(emailurl, JSON.stringify(single_content), function(data, status) {
+    $("#contact-form").trigger("reset");
+    if (data.response_code == "5011") {
+      // alert("Thanks! for choosing corefactors. We will contact you shortly");
+      $.ajax({
+        url: 'https://teleduce.corefactors.in/lead/apiwebhook/32c17645-575d-4ffe-bd89-0a80622b47f2/ScheduleADemo/',
+        type: "POST",
+        dataType: "json",
+        data: {
+        "Last Name" : acclastname,
+        "Email" : accemail,
+        "First Name" : accname
+        },
+        success: function(json) {
+        console.log(json.response + ": " + json.response_code);
+        window.location.replace("https://corefactors.gr8.com//thank_you.html");
+        },
+        error: function(xhr, errmsg, err){
+        console.log(xhr.status + ": " + xhr.responseText);
+        window.location.replace("https://corefactors.gr8.com//thank_you.html");
+        }
+        });
+    
+    } else {
+      alert("Some error has been occured. Kindly, reach us by call");
+      return false;
+    }
+  });
+  
+return true;
+});
+
 // fancybox
 // $(".fancybox").fancybox({
 //     padding: 0,

@@ -189,18 +189,30 @@
     </div>
 
     <div class="form-section-2">
-      <form>
+      <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
         <p class="form-section-2-para">First Name<sup>*</sup></p>
-        <input type="text" value="" id="" class="webinar-form-input">
+        <input type="text" id="firstname" class="webinar-form-input" name="first_name">
         <p class="form-section-2-para">Last Name<sup>*</sup></p>
-        <input type="text" value="" id="" class="webinar-form-input">
+        <input type="text" id="lastname" class="webinar-form-input"  name="last_name">
         <p class="form-section-2-para">Email<sup>*</sup></p>
-        <input type="text" value="" id="" class="webinar-form-input">
+        <input type="text" id="email" class="webinar-form-input" name="email">
+        <!-- List token -->
+        <!-- Get the token at: https://app.getresponse.com/campaign_list.html -->
+        <input type="hidden" name="campaign_token" value="yqUFa" />
+        <!-- Thank you page (optional) -->
+        <input type="hidden" name="thankyou_url" value="https://corefactors.gr8.com//thank_you.html"/>
+        <!-- Add subscriber to the follow-up sequence with a specified day (optional) -->
+        <input type="hidden" name="start_day" value="0" />
+        <!-- Forward form data to your page (optional) -->
+        <input type="hidden" name="forward_data" value="post" />
+        <!-- Subscriber button -->
+        <!-- <input type="submit" value="Subscribe"/> -->
       </form>
       
     </div>
     <div class="form-section-3">
-      <button class="form-section-3-btn">Save My Seat</button>
+      <!-- <button class="form-section-3-btn">Save My Seat</button> -->
+      <input type="submit" value="Save My Seat" class="form-section-3-btn" id="trial_form_submit_webinar"/>
       <p class="form-section-3-para">Even if you can’t make it, sign up anyway!
         We’ll send you the recording.</p>
     </div>
@@ -267,7 +279,7 @@
     <hr class="webinar-hr-line">
     <!--speaker section-->
     <div class="chief-speaker">
-      <h3 class="cs-h3">Get Learnings and Insights From :</h3>
+      <h3 class="cs-h3">Get Learnings and Insights From</h3>
       <div class="cs-flex">
         <div class="cs-flex-img">
         <img src="images/ashvini.jpg" alt="ashvini" class="chief-speaker-img">

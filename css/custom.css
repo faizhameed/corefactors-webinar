@@ -1001,7 +1001,7 @@ img.webinar-logo{
     margin: 5px;
     text-align: center;
 }
-button.form-section-3-btn{
+input.form-section-3-btn{
     color: #16325C;
     text-decoration: none;
     border: 2px solid #ffd246;
@@ -1056,7 +1056,7 @@ h2.ag-h2{
   font-weight:bold;
 }
 h3.form-section-1-h3{
-  font-size: 18px;
+  font-size:24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -1078,6 +1078,13 @@ p.form-section-2-para{
 }
 p.guest-name{
   margin-left: 20px;
+  font-size:14px;
+}
+p.guest-para{
+  font-size: 14px;
+}
+p.cs-name{
+  font-size:12px;
 }
 img.guest-img{
   width: 35%;
@@ -1098,7 +1105,7 @@ p.cs-para{
   font-size:12px;
 }
 p.header-1-para{
-  font-size: 18px;
+  font-size: 16px;
 }
 p.cs-designation{
   font-size: 12px;
@@ -1192,7 +1199,7 @@ hr.webinar-hr-line-2{
   padding: 0 100px 5px;
 }
 p.about-1-para{
-  font-size: 16px;
+  font-size:14px;
   line-height: 1.5em;
 }
 ol.learnings{
